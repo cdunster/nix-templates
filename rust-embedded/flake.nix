@@ -20,7 +20,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [
-          rust-overlay.overlay
+          rust-overlay.overlays.default
         ];
         rustFromFile = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
         nativeBuildInputs = [ pkgs.flip-link ];
