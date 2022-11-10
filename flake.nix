@@ -5,11 +5,15 @@
     templates = {
       rust = {
         path = ./rust;
-        description = "A Nix flake template for a Rust project.";
+        description = "A simple template for using Rust.";
+      };
+      rust-project = {
+        path = ./rust-project;
+        description = "A template for building and running a Rust project with Nix.";
       };
       rust-embedded = {
         path = ./rust-embedded;
-        description = "A Nix flake template for a Rust Embedded project.";
+        description = "A template for an Embedded Rust project.";
       };
     };
   };
