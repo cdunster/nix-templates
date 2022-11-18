@@ -3,6 +3,11 @@
 
   outputs = { self }: {
     templates = {
+      default = self.templates.boilerplate;
+      boilerplate = {
+        path = ./boilerplate;
+        description = "A template with just the boilerplate for using Nix flakes.";
+      };
       rust = {
         path = ./rust;
         description = "A simple template for using Rust.";
