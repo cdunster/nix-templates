@@ -20,6 +20,10 @@
         path = ./rust-embedded;
         description = "A template for an Embedded Rust project.";
       };
+      rust-iced = {
+        path = ./rust-iced;
+        description = "A simple template for using iced-rs the Rust GUI framework based on Elm.";
+      };
     };
   };
 }
