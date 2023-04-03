@@ -24,6 +24,10 @@
         path = ./rust-iced;
         description = "A simple template for using iced-rs the Rust GUI framework based on Elm.";
       };
+      rust-cursive = {
+        path = ./rust-cursive;
+        description = "A simple template for using cursive; the Rust TUI framework using ncurses.";
+      };
     };
   };
 }
