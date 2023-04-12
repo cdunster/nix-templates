@@ -24,6 +24,7 @@
           buildInputs = [
             cargo-audit
             cargo-edit
+            cargo-watch
           ];
 
           RUST_SRC_PATH = rustPlatform.rustLibSrc;
