@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "nixpkgs";
+    flake-utils.url = "flake-utils";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -9,19 +9,18 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, rust-overlay }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs = { self, ... }@inputs:
+    inputs.flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [
-          rust-overlay.overlays.default
+        pkgs = inputs.nixpkgs.legacyPackages.${system}.appendOverlays [
+          inputs.rust-overlay.overlays.default
         ];
         rustFromFile = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
       in
       {
         devShell = with pkgs; mkShell {
-          nativeBuildInputs = [ rustFromFile ];
-
-          buildInputs = [
+          packages = [
+            rustFromFile
             cargo-audit
             cargo-edit
             cargo-watch
