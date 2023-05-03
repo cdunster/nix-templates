@@ -3,4 +3,5 @@
 [toolchain]
 channel = "nightly-2022-04-28"
 components = ["rustfmt", "clippy", "llvm-tools-preview"]
-targets = ["thumbv7em-none-eabihf"]
+# TODO: Enter the correct target architecture (same as in .cargo/config.toml).
+targets = []
