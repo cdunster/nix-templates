@@ -7,7 +7,8 @@ use core::alloc::Layout;
 use core::sync::atomic::{AtomicUsize, Ordering};
 use defmt::panic;
 use defmt_rtt as _;
-use nrf52832_hal as _;
+# TODO: Add the HAL crate.
+use {{hal_crate}} as _;
 use panic_probe as _;
 
 #[defmt::panic_handler]
