@@ -28,6 +28,10 @@
         path = ./rust-cursive;
         description = "A simple template for using cursive; the Rust TUI framework using ncurses.";
       };
+      rust-bevy = {
+        path = ./rust-bevy;
+        description = "A template for using the Bevy Game Engine.";
+      };
     };
   };
 }
